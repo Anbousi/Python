@@ -1,0 +1,25 @@
+pip3 list shows us istalled package if the directory is outside the activated virtual environment
+inside w can use "pip list"
+What has been installed, and whether the installation was successful or not.
+
+call myEnvironments/py3Env/Scripts/activate
+it will activate the environment
+
+pip install Django==2.2.4
+it will install Django package
+
+
+freeze Output installed packages in requirements format. list List installed packages.
+
+
+pip freeze > requirements.txt
+creat .txt file contains the name of the installed packages
+
+desktop> dir
+shows desktop files and there is a new text file created called requirements.txt
+
+
+pip uninstall Django
+
+pip show Django
+package not found, because we already uninstalled it
