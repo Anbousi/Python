@@ -11,6 +11,15 @@
 
 import random
 def randInt(min=0 , max=100):
+    if max<0:
+        print("max is less than zero")
+        return False
+    if min > max:
+        temp = min
+        min = max
+        max = temp
+        print("min and max are switched")
+
     num = random.random()*(max-min) + min
     num = round(num)
     return num
@@ -23,5 +32,9 @@ z = randInt(min=90)
 print("z =",z)
 k = randInt(min = 50 , max = 60)
 print("k =",k)
+f = randInt(min = 80 , max = 60)
+print("f =",f)
+g = randInt(min = 80 , max = -60)
+print("g =",g)
 
 
