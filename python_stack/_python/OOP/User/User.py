@@ -21,14 +21,10 @@ class User:		# here's what we have so far
         other_user.make_deposit(amount)
         print("name:",self.name,"balance:", self.account_balance )
         print("name:",other_user.name,"balance:", other_user.account_balance )
-        
-        
-    
-
 
 Mahmoud = User(email = "anb@gmail.com" , name ="Mahmoud")
-Tamara = User(email = "Tamara@gmail.com" , name ="Tamara")
-Lana = User(email = "Lana@gmail.com" , name ="Lana")
+Tamara = User(name ="Tamara",email = "Tamara@gmail.com")
+Lana = User("Lana","Lana@gmail.com") #when not specify the parameter name the order is important
 
 
 Mahmoud.make_deposit(500)
