@@ -31,11 +31,36 @@ print(z)
 
 #2-Iterate Through a List of Dictionaries
 def iterateDictionary(a):
-    for i  in a:
-        print(i)
+
+    # for i  in a :
+    #     for key , value in i.items():
+    #         print (f"first_name - {key}, last_name - {value}")
+
+    for i in a:
+        print(f"first_name - {i['first_name']}, last_name - {i['last_name']}")
+    
+students = [
+         {'first_name':  'Michael', 'last_name' : 'Jordan'},
+         {'first_name' : 'John', 'last_name' : 'Rosales'},
+         {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+         {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
+x = iterateDictionary(students)
+print(x)
 
 
+#==========================================================
 
+#3-Get Values From a List of Dictionaries
+def iterateDictionary2(key_name, some_list):
+    if key_name == "first_name":
+        for i in some_list:
+            print(f"{i['first_name']}")
+    elif key_name == "last_name":
+        for i in some_list:
+            print(f"{i['last_name']}")
+    else:
+        return "please specify first or last name"
 
 students = [
          {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -43,6 +68,29 @@ students = [
          {'first_name' : 'Mark', 'last_name' : 'Guillen'},
          {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
-iterateDictionary(students)
-x = iterateDictionary(students)
+x = iterateDictionary2( 'first_name' , students)
 print(x)
+y = iterateDictionary2( 'last_name' , students)
+print(y)
+
+#==========================================================
+
+#4-Iterate Through a Dictionary with List Values
+# Create a function printInfo(some_dict) that given a dictionary whose values are all lists, 
+# prints the name of each key along with the size of its list, 
+# and then prints the associated values within each key's list. For example:
+
+def printInfo(some_dict):
+    for key , value in some_dict.items():
+        print(f"{len(value)} {key.upper()}")
+        for i in value:
+            print(i)
+        print("\n")
+
+dojo = {
+   'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+   'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+
+x= printInfo(dojo)
+print (x)
