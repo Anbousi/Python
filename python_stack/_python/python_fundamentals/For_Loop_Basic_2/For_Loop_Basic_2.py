@@ -129,6 +129,16 @@ print(x)
 #9-Reverse List - Create a function that takes a list and return that list with values reversed. 
 # Do this without creating a second list. (This challenge is known to appear during basic technical interviews.)
 #Example: reverse_list([37,2,1,-9]) should return [-9,1,2,37]
+
+def reverse_list(lista):
+    for i in range (int(len(lista)/2)):
+        lista[i] , lista[len(lista)-i-1] = lista[len(lista)-i-1],lista[i]
+    return lista
+lista = [37,2,1,-9]
+x = reverse_list(lista)
+print(x)
+
+# OR OR OR OR OR OR OR 
 def reverse_list(lista):
     lista = lista[::-1]
     return lista
