@@ -13,6 +13,8 @@ class BankAccount:
             return self
         else:
             print("Insufficient funds: Charging a $5 fee")
+            self.account_balance -= 5
+            return self
 
     def display_account_info(self):   
         print(f"Account balance = {self.account_balance}")
