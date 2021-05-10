@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Playground</title>
+</head>
+<body>
+    <main style="margin: 0 auto;">
+
+        <!-- num 2 -->
+        <!-- <div style="display: inline-block; margin: 30px; width: 270px; height: 270px;background-color: aqua;border: 6px solid black;"></div>
+        <div style="display: inline-block; margin: 30px; width: 270px; height: 270px;background-color: aqua;border: 6px solid black;"></div>
+        <div style="display: inline-block; margin: 30px; width: 270px; height: 270px;background-color: aqua;border: 6px solid black;"></div> -->
+        
+        <!-- num 3 -->
+        {% for i in range(times) %}
+            <div style="display: inline-block; margin: 30px; width: 270px; height: 270px;background-color: {{color}};border: 6px solid black;"></div>
+        {% endfor %}
+
+        
+    </main>
+</body>
+</html>

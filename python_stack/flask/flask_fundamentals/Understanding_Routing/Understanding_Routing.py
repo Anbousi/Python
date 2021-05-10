@@ -15,7 +15,7 @@ def hello_world_2(name):
     return "Hi " + name
 
 #repeat word 
-@app.route('/repeat/<int:num>/<word>') #contert the number to integer instead of string "when we get the num from url it will be string so convert it to int"
+@app.route('/repeat/<int:num>/<word>') #contvert the number to integer instead of string "when we get the num from url it will be string so convert it to int"
 def repeat(num , word):
     string = "" # define empty string to add repeated "word" with a Tag if needed
     for i in range(int(num)):
