@@ -21,24 +21,24 @@
         {% if j%2 == 0 %}
                 <div class="colomn">
                     {% for i in range(x) %}
-                    {%if i%2 == 0 %}
-                    {% set variable = "one" %}
-                    {% else %}
-                    {% set variable = "two" %}
-                    {% endif %}
-                        <div class="box {{variable}}"></div>
+                        {%if i%2 == 0 %}
+                        {% set variable = "one" %}
+                        {% else %}
+                        {% set variable = "two" %}
+                        {% endif %}
+                            <div class="box {{variable}}"></div>
                     {% endfor %}
                 </div>
         {% endif %}
         {% if j%2 == 1 %}
                 <div class="colomn">
                     {% for i in range(x) %}
-                    {%if i%2 == 0 %}
-                    {% set variable = "two" %}
-                    {% else %}
-                    {% set variable = "one" %}
-                    {% endif %}
-                        <div class="box {{variable}}"></div>
+                        {%if i%2 == 0 %}
+                        {% set variable = "two" %}
+                        {% else %}
+                        {% set variable = "one" %}
+                        {% endif %}
+                            <div class="box {{variable}}"></div>
                     {% endfor %}
                 </div>
 {% endif %}
