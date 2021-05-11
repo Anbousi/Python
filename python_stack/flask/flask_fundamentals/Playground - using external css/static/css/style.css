@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    margin: 0 auto;
+}
+
+main div{
+    display: inline-block; 
+    margin: 30px; 
+    width: 270px; 
+    height: 270px;
+    background-color: {{color}};
+    border: 6px solid black;
+}

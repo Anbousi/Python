@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div .box{
+    width: 80px;
+    height: 80px;
+}
+
+.colomn{
+    display: flex;
+}
