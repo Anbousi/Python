@@ -39,7 +39,7 @@
                     <td><label for="location">Dojo Location:</label></td>
                     <td>
                         <select name="location" id="location" required>
-                            <option value="" selected hidden></option>
+                            <option value="" selected hidden>Please Select</option>
                             <option value="San Jose">San Jose</option>
                             <option value="Arlington">Arlington</option>
                             <option value="Los Angeles">Los Angeles</option>
@@ -52,7 +52,7 @@
                     <td><label for="language">Favorite Language:</label></td>
                     <td>
                         <select name="language" id="language" required>
-                            <option value="" selected hidden></option>
+                            <option value="" selected hidden>Please Select</option>
                             <option value="Python">Python</option>
                             <option value="Java">Java</option>
                             <option value="Mern">Mern</option>
@@ -70,7 +70,7 @@
                 <input type="radio" name="radio" value="No" id="n" required>
                 <label for="n" class="n">No</label>
             </div>
-            <section id="news">
+            <div id="news">
                 <input type="checkbox" name="check" id="check1" class="check" value='Daily'>
                 <label for="check1" class="check">Daily News</label><br>
                 
@@ -79,9 +79,9 @@
                 
                 <input type="checkbox" name="check" id="check3" class="check" value='Monthly'>
                 <label for="check3" class="check">Monthly News</label><br><br>
-            </section><br>
-            <label for="comment" id="l-comment" >Comment (optional) &#8645</label><br>
-            <input type="textarea" name="comment" id="comment" class="input" placeholder="Add your comment here..."><br>
+            </div><br>
+            <label for="comment" id="l-comment" >Comment (optional) &#8645;</label><br>
+            <input type="text" name="comment" id="comment" class="input"><br>
 
             <input type="submit" value="Creat User" id="submit" class="btn btn-success input">
         </form>
