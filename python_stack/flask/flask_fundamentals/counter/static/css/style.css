@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+main{
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    padding: 60px;
+}
+section{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    max-width: 550px;
+}
+
+h1{
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 30px;
+}
+
+p{
+    font-size: 35px;
+    margin: 30px;
+}
+
+.add , .reset{
+    padding: 10px 20px;
+    margin: 20px;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px gray;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+.add {
+    background-color: rgb(32, 134, 32);
+}
+
+.add:hover{
+    cursor: pointer;
+    background-color: rgb(27, 107, 27);
+    color: white;
+    transition-duration: 0.5s;
+}
+
+.reset{
+    background-color: rgb(216, 59, 59);
+}
+
+.reset:hover{
+    cursor: pointer;
+    background-color: rgb(197, 38, 38);
+    color: white;
+    transition-duration: 0.5s;
+}
