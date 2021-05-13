@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/style.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Guess The Number</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            if ({{y}} == 5){
+                $('#button-addon2').attr('disabled' , true);
+                alert("You Lose");
+            }
+            if ({{win}} == 1){
+                $('#button-addon2').attr('disabled' , true);
+                alert("You Win \n\n Number of attempts: {{y}}");
+            }
+        });
+
+            
+
+
+    </script>
+    <style>
+        .coloring{
+            background-color: {{color}};
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Welcome to the Great Number Game!</h1>
+        <p><b>I am thinking of a number between 1 and 100</b></p>
+        <p><b>Take a guess</b></p>
+        <div class="coloring">
+            <p>{{estimated}}</p>
+            <p class="fs-1">{{answer}}</p>
+            <!-- <p>Tries: {{y}}</p> -->
+        </div>
+        <!-- <form action="/guess-num" method="POST">
+            <input type="number" name="num_guess" value="0">
+            <input type="submit" value="Take a guess" class="btn btn-primary btn-lg m-2">
+        </form> -->
+        <form action="/guess-num" method="POST">
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" placeholder="guess the number" value="0" name="num_guess" aria-label="Guess the number" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                <button class="btn bg-primary" type="submit" id="button-addon2" >Take a guess</button>
+                </div>
+            </div>
+        </form>
+
+        <form action="/reset" method="POST">
+            <input type="submit" value="Reset" class="btn btn-danger btn-lg full">
+        </form>
+
+    </main>
+</body>
+</html>
