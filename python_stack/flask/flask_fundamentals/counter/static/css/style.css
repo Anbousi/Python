@@ -28,7 +28,7 @@ p{
     margin: 30px;
 }
 
-.add , .reset{
+.add , .reset , .inc {
     padding: 10px 20px;
     margin: 20px;
     width: 180px;
@@ -59,4 +59,23 @@ p{
     background-color: rgb(197, 38, 38);
     color: white;
     transition-duration: 0.5s;
+}
+
+.inc{
+    background-color: rgb(72, 72, 223);
+    
+}
+
+.inc:hover{
+    cursor: pointer;
+    background-color: rgb(51, 51, 219);
+    color: white;
+    transition-duration: 0.5s;
+}
+
+.num {
+    height: 19.2px;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 6px;
 }
