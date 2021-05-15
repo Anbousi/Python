@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(192, 192, 192);
+}
+
+.main{
+    margin: 100px auto;
+    background-color:rgb(228, 227, 227) ;
+    min-height: 500px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 25px rgb(54, 54, 54);
+}
+
+.row {
+    height: 500px;
+    border-radius: 30px;
+}
+
+.col{
+    border-radius: 30px 0px 0px 30px;
+}
+
+.text-center{
+    margin: 30px auto  auto 15px;
+}
+.t{
+    text-decoration: underline;
+    font-size: 140px;
+    margin-bottom: 0;
+}
+
+
+.col-sm-8 h1{
+    font-size: 100px;
+}
+
+.text-success{
+    margin-top: 130px;
+}
