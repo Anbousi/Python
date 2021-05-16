@@ -1,0 +1,75 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    padding: 30px;
+    max-width: 450px;
+    border: 2px solid black;
+    margin: 30px;
+}
+table{
+    max-width: 370px;
+}
+
+.input , select{
+    width: 200px;
+}
+
+#comment{
+    width: 350px;
+    height: 100px;
+    resize: none;
+    overflow: scroll;
+}
+
+#submit{
+    padding: 3px;
+    min-width: 80px;
+    max-width: 120px;
+    margin: 20px 20px 0px 0px;
+
+}
+
+h3{
+    text-decoration: underline;
+}
+
+.yes-no{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#news{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 40px;
+    min-height: 120px;
+}
+
+.y:hover{
+    color: green;
+    font-weight: bolder;
+}
+
+.green{
+    color: green;
+    font-weight: bolder;
+}
+
+.n:hover{
+    color: red;
+    font-weight: bolder;
+}
+
+.red{
+    color: red;
+    font-weight: bolder;
+}
+
+#l-comment:hover{
+    cursor: pointer;
+}
+
+
