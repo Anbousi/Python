@@ -29,8 +29,9 @@
 </head>
 
 <body>
-    <!-- <main>
-        <form action="/result" method="POST" class="form-group">
+    <main>
+        <form action="/data" method="POST" class="form-group">
+            {% csrf_token %}
             <table class="table table-sm">
                 <tr>
                     <td><label for="name">Your Name:</label></td>
@@ -86,20 +87,7 @@
 
             <input type="submit" value="Creat User" id="submit" class="btn btn-success input">
         </form>
-    </main> -->
-    <h1>Index Page</h1>
-    <h3>Creat User</h3>
-    <form action="/get" method="get">
-        {% csrf_token %}
-        <input type="text" name="get-text">
-        <button type="submit">Creat User "GET"</button>
-    </form>
-
-    <form action="/post" method="post">
-        {% csrf_token %}
-        <input type="text" name="post-text">
-        <button type="submit" >Creat User "POST"</button>
-    </form>
+    </main>
     
 </body>
 </html>

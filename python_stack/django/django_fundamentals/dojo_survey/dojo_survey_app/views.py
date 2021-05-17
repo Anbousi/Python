@@ -7,17 +7,25 @@ def index(request):
 
     return render(request,"index.html")
 
-def get_user(request):
-    if request.method == "GET":
-        print("this is GET method")
+def data(request):
     if request.method == "POST":
-        print("this is POST method")
-    return render(request,"index.html")
+        request.session['name'] = request.POST['name']
+        request.session['location'] = request.POST['location']
+        request.session['language'] = request.POST['language']
+        request.session['radio'] = request.POST['radio']
+        # check = request.POST['check']
+        request.session['comment'] = request.POST['comment']
+        return redirect('/result')
 
-def post_user(request):
-    if request.method == "GET":
-        print("this is GET method")
-    if request.method == "POST":
-        print("this is POST method")
-        print(request.POST)
-    return render(request,"index.html")
+def result(request):
+    context = {
+    "name": request.session['name'],
+    "location" : request.session['location'],
+    "language" : request.session['language'],
+    "radio": request.session['radio'],
+    # "check" : check,
+    "comment": request.session['comment']
+    }
+    return render(request,"result.html" , context)
+
+

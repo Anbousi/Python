@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>User Info.</title>
 </head>
@@ -15,19 +16,19 @@
             <table class="table">
                 <tr>
                     <td>Name:</td>
-                    <td>{{name_form}}</td>
+                    <td>{{name}}</td>
                 </tr>
                 <tr>
                     <td>Dojo Location:</td>
-                    <td>{{location_form}}</td>
+                    <td>{{location}}</td>
                 </tr>
                 <tr>
                     <td>Favorite Language:</td>
-                    <td>{{language_form}}</td>
+                    <td>{{language}}</td>
                 </tr>
                 <tr>
                     <td>Comment:</td>
-                    <td>{{comment_form}}</td>
+                    <td>{{comment}}</td>
                 </tr>
             </table>
             <input type="submit" value="Go Back" id="submit" class="btn btn-dark">
