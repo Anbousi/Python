@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            if ({{real_count}} == 1){
+                alert("Why you didn't visit our website before!! \n Ewwwwwwwwwwww");
+            }
+        });
+    </script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Counter</title>
+</head>
+<body>
+    <main>
+        <h1>Counter</h1>
+        <p>{{count}} times</p>
+        <section>
+            <form action="/counter" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Add two visits!" id="submit" class="add" name="add">
+            </form>
+
+            <form action="/reset" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Reset" id="submit" class="reset" name="reset">
+            </form>
+        </section>
+
+        <section>
+        <form action="/inc" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Increment" id="submit" class="inc" >
+            <input type="number" class="num" name="counti" placeholder="0" value={{count1}}> <!-- value = {{count1}} , to set the value as last time after refresh the page , take the data from session['increment'] -->
+        </form>
+        </section><br>
+        <h2>Actual visited times</h2>
+        <p>{{real_count}}</p>
+        <form action="/hard_reset" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Hard Reset" id="submit" class="reset" name="hard_reset">
+        </form>
+    </main>
+</body>
+</html>
