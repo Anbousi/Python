@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(26, 26, 26);
+}
+
+main{
+    padding: 20px;
+    width: 980px;
+    margin: 0 auto;
+}
+
+#gold{
+    display: inline-block;
+    margin-left: 15px;
+    width: 100px;
+}
+
+.gold{
+    border: 2px solid black;
+    background-color: gold;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box{
+    border: 2px solid black;
+    padding: 20px;
+    flex: 1;
+    max-width: 180px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: rgb(206, 202, 202);
+    box-shadow: 1px 1px 5px rgb(29, 29, 29);
+}
+
+.box h2, .box p , .box form{
+align-items: center;
+justify-content: space-between;
+flex: 1;
+}
+
+.box button{
+    padding: 5px 20px;
+    background-color: gold;
+    font-weight: bold;    
+}
+
+#log{
+    padding: 0px 30px;
+    margin-top: 30px;
+    height: 150px;
+    background-color: black;
+    overflow-y: scroll;
+    color: rgb(206, 202, 202);
+    display: flex;
+    flex-direction: column;
+}
+
+.reset{
+    padding: 5px 20px;
+    color:gold ;
+    border: none;
+    background-color: black;;
+    font-weight: bold;
+    float: right;
+    margin-top: 100px;
+}
