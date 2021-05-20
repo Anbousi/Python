@@ -1,0 +1,30 @@
+1) import User model
+from users_app.models import User
+
+2) Create 3 Users
+User.objects.create(first_name = "Mahmoud" , last_name = "Anbousi" , email = "anbousi@gmail.com" , age = 29)
+User.objects.create(first_name = "Lana" , last_name = "Yaghi" , email = "Yaghi@sfasd.csc" , age = 20)
+User.objects.create(first_name = "Mohammad" , last_name = "Raddad" , email = "asdas@sdf.com" , age = 23)
+
+3)Retrieve all the users
+User.objects.all()
+
+4)Retrieve the last user
+User.objects.last()
+
+5)Retrieve the first user
+User.objects.first()
+
+6)Change the user with id=3 so their last name is Pancakes.
+Last = User.objects.get(id=3)
+Last.last_name = "Pancakes"
+Last.save()
+
+7)Query: Delete the user with id=2 from the database
+User.objects.get(id=2).delete()
+
+8)Query: Get all the users, sorted by their first name
+User.objects.all().order_by("first_name")
+
+9)BONUS Query: Get all the users, sorted by their first name in descending order
+User.objects.all().order_by("-first_name")
