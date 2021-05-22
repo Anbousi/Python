@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Users</title>
 </head>
+
 <body>
-    <h1>All the Users</h1>
-    <table>
-        <thead>
-            <td>ID</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Age</td>
-        </thead>
-        <tbody>
-            {% for user in users %}
-            <tr>
-                <td>{{user.id }}</td>
-                <td>{{user.first_name }}</td>
-                <td>{{user.last_name }}</td>
-                <td>{{user.age }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <form action="/add" method="post">
-        {% csrf_token %}
-    <h2>Add a User</h2>
-    <label>First Name:
-        <input type="text" name='f_name' value="">
-    </label>
-    <label>Last Name:
-        <input type="text" name='l_name' value="">
-    </label>
-    <label>E-mail:
-        <input type="email" name='email' value="">
-    </label>
-    <label>Age:
-        <input type="number" name='age' value="">
-    </label>
-    <input type="submit" value="Add">
-    </form>
+    <main>
+        <h1 class="display-5">All the Users</h1>
+        <table class="table table-striped table-hover table-bordered border-primary">
+            <thead class="table-dark">
+                <tr >
+                    <th scope="col" >ID</td>
+                    <th scope="col">First Name</td>
+                    <th scope="col">Last Name</td>
+                    <th scope="col">Age</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr scope="row">
+                    <td>{{user.id }}</td>
+                    <td>{{user.first_name }}</td>
+                    <td>{{user.last_name }}</td>
+                    <td>{{user.age }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="/add" method="post">
+            {% csrf_token %}
+            <section>
+                <h2 class="display-6">Add New User</h2>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">First Name:</span>
+                    <input type="text" class="form-control" placeholder="Firstname" aria-label="Firstname" aria-describedby="basic-addon1" name='f_name'>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Last Name:</span>
+                    <input type="text" class="form-control" placeholder="Lastname" aria-label="Lastname" aria-describedby="basic-addon1" name='l_name'>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">E-mail:</span>
+                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" name='email'>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">E-mail:</span>
+                    <input type="number" class="form-control" placeholder="Age" aria-label="Age" aria-describedby="basic-addon1" name='age'>
+                </div>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </section>
+
+        </form>
+    </main>
 </body>
 </html>
