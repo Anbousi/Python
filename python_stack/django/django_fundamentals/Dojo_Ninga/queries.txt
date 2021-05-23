@@ -1,0 +1,65 @@
+1) Run the shell and import your models
+
+python manage.py shell
+
+2) Query: Create 3 new dojos
+
+from dojo_and_ninja_app.models import Dojos , Ninjas
+>>> Dojos.objects.create(name = "Mahmoud" , city ="Nablus" , state = 'PS')
+>>> Dojos.objects.create(name = "Moaath" , city ="Nablus" , state = 'PS')
+>>> Dojos.objects.create(name = "Mohammad" , city ="Salfiet" , state = 'PS')
+
+3)Query: Delete the 3 dojos you just created  #this will not delete the id 
+
+>>> Dojos.objects.get(id=1).delete
+>>> Dojos.objects.get(id=2).delete
+>>> Dojos.objects.get(id=3).delete
+
+4)Query: Create 3 more dojos #will continue counting id , id will start from 4
+
+>>> Dojos.objects.create(name = "Mahmoud" , city ="Nablus" , state = 'PS')
+>>> Dojos.objects.create(name = "Moaath" , city ="Nablus" , state = 'PS')
+>>> Dojos.objects.create(name = "Mohammad" , city ="Salfiet" , state = 'PS')
+
+5)Query: Create 3 ninjas that belong to the first dojo
+
+>>> Ninjas.objects.create(first_name = "Hazem" , last_name = "Kiwani" , dojo = Dojos.objects.get(id=4))
+>>> Ninjas.objects.create(first_name = "Ibtisal" , last_name = "Awasharah" , dojo = Dojos.objects.get(id=4))
+>>> Ninjas.objects.create(first_name = "Diaa" , last_name = "Remawi" , dojo = Dojos.objects.get(id=4))
+
+
+6)Query: Create 3 ninjas that belong to the second dojo
+
+>>> Ninjas.objects.create(first_name = "Diaa" , last_name = "Remawi" , dojo = Dojos.objects.get(id=5))
+>>> Ninjas.objects.create(first_name = "Mohammad" , last_name = "Hosainy" , dojo = Dojos.objects.get(id=5))
+>>> Ninjas.objects.create(first_name = "Kamal" , last_name = "Nouri" , dojo = Dojos.objects.get(id=5))
+
+
+7)Query: Create 3 ninjas that belong to the third dojo
+
+>>> Ninjas.objects.create(first_name = "Amro" , last_name = "abo-Hasheesh" , dojo = Dojos.objects.get(id=6))
+>>> Ninjas.objects.create(first_name = "Ahmead" , last_name = "Raddad" , dojo = Dojos.objects.get(id=6))
+>>> Ninjas.objects.create(first_name = "Mohammad" , last_name = "Raddad" , dojo = Dojos.objects.get(id=6))
+
+8)Query: Retrieve all the ninjas from the first dojo
+>>> Ninjas.objects.filter(dojo=Dojos.objects.first()
+OR
+>>> Ninjas.objects.filter(dojo=Dojos.objects.get(id=4)) #if we know the first id num
+
+9)Query: Retrieve all the ninjas from the last dojo
+ Ninjas.objects.filter(dojo=Dojos.objects.last())
+
+10)Query: Retrieve the last ninja's dojo
+>>> M = Ninjas.objects.filter(dojo=Dojos.objects.last())
+>>> M.last()
+>>> M.last().__dict__
+
+11)Add a new text field called "desc" to your Dojo class
+a) add the new field to the class 
+b) makemigrations
+c)select add method >> 1
+d)set the default value
+e) migrate
+
+12)Query: Create a new dojo
+Dojos.objects.create(name = "Mahmoud" , city ="Nablus" , state = 'PS' , desc = 'old-dojo')
