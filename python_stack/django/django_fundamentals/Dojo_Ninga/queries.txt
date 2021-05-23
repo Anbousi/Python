@@ -53,6 +53,8 @@ OR
 >>> M = Ninjas.objects.filter(dojo=Dojos.objects.last())
 >>> M.last()
 >>> M.last().__dict__
+>>> OR
+>>> Ninjas.objects.filter(dojo=Dojos.objects.last()).last()
 
 11)Add a new text field called "desc" to your Dojo class
 a) add the new field to the class 

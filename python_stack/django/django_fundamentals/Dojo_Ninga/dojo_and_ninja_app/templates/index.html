@@ -49,7 +49,8 @@
                 <form action="/delete" method="post">
                 {% csrf_token %}
                     {% for dojo in Dojos %}
-                    <label>{{dojo.name}}</label> <button type="submit">Delete</button>
+                    <label>{{dojo.name}}</label> 
+                    <button type="submit" name= "delete" value="{{dojo.name}}">Delete</button>
                     <ul>
                         {% for ninja in dojo.ninjas.all %}
                             <li>{{ninja.first_name}} {{ninja.last_name}}</li>
