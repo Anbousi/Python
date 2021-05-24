@@ -1,5 +1,5 @@
 """
-WSGI config for dojo_and_ninja project.
+WSGI config for login_registration project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo_and_ninja.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'login_registration.settings')
 
 application = get_wsgi_application()

@@ -101,6 +101,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> William.book.add(d)
 >>> William.book.add(e)
 >>> William.book.add(f)
+
 >>> William.book.all()
 <QuerySet [<Books: Books object (1)>, <Books: Books object (2)>, <Books: Books object (3)>, <Books: Books object (4)>, <Books: Books object (5)>]>
 >>>
@@ -116,5 +117,20 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> Python=Books.objects.get(id=3)
 >>> Python.books_authors.remove(Jane)
 
+12- Query: Add the 5th author as one of the authors of the 2nd book
 
+>>> Lau = Authors.objects.get(id = 5)
+>>> secondbook = Books.objects.get(id = 2)
+>>> Lue.book.add(secondbook)
+
+13- Query: Find all the books that the 3rd author is part of
+
+>>> author3 = Authors.objects.get(id = 3)
+>>> author3.book.all()
+<QuerySet [<Books: Books object (1)>, <Books: Books object (2)>, <Books: Books object (3)>, <Books: Books object (4)>]>
+
+14- Query: Find all the authors that contributed to the 5th book
+>>> fifthbook = Books.objects.get (id = 5)
+>>> fifthbook.books_authors.all()
+<QuerySet [<Authors: Authors object (4)>]>
 
