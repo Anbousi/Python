@@ -1,6 +1,7 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render , redirect , HttpResponse
 from tv_app.models import *
 from time import strftime
+from django.contrib import messages
 
 # Create your views here.
 def read_all(request):
@@ -13,8 +14,15 @@ def new(request):
     return render(request, 'add_show.html')
 
 def create(request):
-    new_show = create_show(request.POST)
-    return redirect ('/shows/'+str(new_show.id))
+    errors = Shows.objects.basic_validator(request.POST)
+    if len(errors) > 0:
+        for key,value in errors.items():
+            messages.error(request,value)
+        return redirect ('/shows/new')
+
+    if request.method == ['POST']:
+        new_show = create_show(request.POST)
+        return redirect ('/shows/'+str(new_show.id))
 
 def show_this(request,id):
     context = {
@@ -35,5 +43,13 @@ def edit(request,id):
     return render(request, 'edit_this.html' , context)
 
 def update(request,id):
-    editted_show = update_show(request.POST)
-    return redirect('/shows/'+str(id))
+    errors = Shows.objects.basic_validator(request.POST)
+    
+    if len(errors) > 0:
+        for key,value in errors.items():
+            messages.error(request,value)
+        return redirect (f'/shows/{id}/edit')
+
+    if request.method == ['POST']:
+        editted_show = update_show(request.POST)
+        return redirect('/shows/'+str(id))
