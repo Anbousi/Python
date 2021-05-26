@@ -45,10 +45,10 @@ def select_book(request):
     my_author = Author.objects.get(id = request.session['id'])
     Boook = request.POST['select_book1']
     create_book(my_author,Boook)
-    return redirect('/authors')
+    return redirect('/authors/'+str(request.session['id'])) #to redirect to the same route
 
-def select_author(request):
-    my_book = Book.objects.get(id = request.session['id'])
-    return redirect('/')
+# def select_author(request):
+#     my_book = Book.objects.get(id = request.session['id'])
+#     return redirect('/')
 
 
