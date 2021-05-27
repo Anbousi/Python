@@ -44,15 +44,11 @@ def delete_this(id):
     this_show = Shows.objects.get(id = id)
     this_show.delete()
     
-# def edit_this(id):
-#     this_show = Shows.objects.get(id = id)
-#     this_show.title
-
 def update_show(data):
     this_show = Shows.objects.get(id=data['id'])
     this_show.title = data['title']
     this_show.network = data['network']
     this_show.description = data['description']
     this_show.release_date = data['release_date']
-    messages.success(request,'Show successfully updated')
     this_show.save()
+    # messages.success(request,'Show successfully updated')

@@ -1,4 +1,4 @@
-from django.shortcuts import render , redirect , HttpResponse
+from django.shortcuts import render , redirect 
 from tv_app.models import *
 from time import strftime
 from django.contrib import messages
@@ -44,12 +44,11 @@ def edit(request,id):
 
 def update(request,id):
     errors = Shows.objects.basic_validator(request.POST)
-    
+
     if len(errors) > 0:
         for key,value in errors.items():
             messages.error(request,value)
         return redirect (f'/shows/{id}/edit')
 
-    if request.method == ['POST']:
-        editted_show = update_show(request.POST)
-        return redirect('/shows/'+str(id))
+    editted_show = update_show(request.POST)
+    return redirect('/shows/'+str(id))

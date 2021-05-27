@@ -1,0 +1,15 @@
+main{
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.table{
+    flex: 1.5;
+    margin-left:30px;
+}
+
+.form{
+    flex: 2;
+}
