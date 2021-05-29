@@ -13,14 +13,14 @@
     <main>
         <div>
             <h2>Registration</h2>
-            {% if messages %}
-                <ul class="messages" style="color:red;">    
-                    {% for message in messages %}    
-                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
-                    {% endfor %}
-                </ul>
-            {% endif %}
             <form action="/login_registration/" method="post">
+                {% if messages %}
+                    <ul class="messages" style="color:red;">    
+                        {% for message in messages %}    
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 {% csrf_token %}
                 <input type="hidden" value="registration" name='log_reg'>
                 <table>
@@ -56,6 +56,13 @@
         <div>
             <h2>Login</h2>
             <form action="/login_registration/" method="post">
+                {% if messages %}
+                    <ul class="messages" style="color:red;">    
+                        {% for message in messages %}    
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 {% csrf_token %}
                 <input type="hidden" value="login" name='log_reg'>
                 <table>

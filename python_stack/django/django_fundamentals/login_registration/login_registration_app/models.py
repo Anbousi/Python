@@ -50,8 +50,8 @@ class Users(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-def create_user(data):
-    errors = Users.objects.basic_validator(data)
+def create_user(post_data):
+    errors = Users.objects.basic_validator(post_data)
     db_email = Users.objects.filter(email = data['email'])
 
     if db_email:

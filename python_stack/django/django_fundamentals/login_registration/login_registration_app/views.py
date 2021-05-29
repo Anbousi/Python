@@ -13,7 +13,7 @@ def check(request):
     if request.method == 'POST':
         in_data = request.POST
         if in_data['log_reg'] == 'registration':
-            errors = create_user(in_data)
+            errors = creae_user(in_data)
             if len(errors)>0:
                 for key,value in errors.items():
                     messages.error(request,value)
@@ -25,8 +25,9 @@ def check(request):
             if request.method == 'POST':
                 errors = login_user(request.POST)
                 if len(errors)>0:
+                    for key,value in errors.items():
+                        messages.error(request,value)
                     return redirect('/')
-
             return redirect('/home/')
     
     
