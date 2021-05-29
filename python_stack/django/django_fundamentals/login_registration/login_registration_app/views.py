@@ -22,10 +22,13 @@ def check(request):
             
 
         elif in_data['log_reg'] == 'login':
-            if (login_user(request.POST)):
-                return redirect('/home/')
-    
-    return redirect('/')
+            if request.method == 'POST':
+                errors = login_user(request.POST)
+                if len(errors)>0:
+                    return redirect('/')
 
+            return redirect('/home/')
+    
+    
 
 

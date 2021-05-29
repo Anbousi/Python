@@ -73,8 +73,9 @@ def login_user(data):
     errors={}
     this_user = get_user(data['email'])
     if len(this_user)>0:
-        pw = this_user['password']
+        pw = this_user[0].password
         in_pw =  bcrypt.checkpw(data["password"].encode(), pw.encode())
         if in_pw == True:
                 return errors
+    errors['login'] = "Username or password is incorrect"
     return errors
