@@ -50,8 +50,8 @@ class Users(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-def create_user(post_data):
-    errors = Users.objects.basic_validator(post_data)
+def create_user(data):
+    errors = Users.objects.basic_validator(data)
     db_email = Users.objects.filter(email = data['email'])
 
     if db_email:
@@ -61,8 +61,7 @@ def create_user(post_data):
         #hash password before saving in database
         pw = bcrypt.hashpw(data["password"].encode(), bcrypt.gensalt()).decode()
 
-        Users.objects.create(first_name = data['f_name'] , last_name = data['l_name'] , email = data['email'] , password = pw , birthday = data['birthday'])
-    
+        Users.objects.create(first_name = data['f_name'] , last_name = data['l_name'] , email = data['email'] , password = pw , birthday = data['birthday'])    
     return errors
 
 def get_user(user):

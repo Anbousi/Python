@@ -7,6 +7,7 @@
     <title>Welcome</title>
 </head>
 <body>
-    <h1>Succsess! Welcome, </h1>
+    <h1>Succsess! Welcome, {{request.session.login}}</h1>
+    <a href="/logout">Logout</a>
 </body>
 </html>
