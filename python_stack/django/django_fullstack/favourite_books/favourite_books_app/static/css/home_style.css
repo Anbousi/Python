@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    width: 75%;
+    margin: 0 auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+textarea{
+    width: 100%;
+}
+
+section{
+    margin: 20px 0px;
+}

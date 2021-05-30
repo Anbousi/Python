@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Book</title>
+</head>
+<body>
+    <a href="/logout" style="float: right;">Logout</a>
+    <h2>Welcome {{request.session.name}}</h2>
+    <hr>
+    <h2>{{this_book.title}}</h2>
+    <p>added by: {{this_book.uploaded_by.first_name}} {{this_book.uploaded_by.last_name}}</p>
+    <p>added on: {{this_book.created_at}}</p>
+    <p>Last updated: {{this_book.updated_at}}</p>
+    {% if request.session.user == this_book.uploaded_by.id%}
+    <form action="../update/{{this_book.id}}" method="post">
+        {% csrf_token %}
+        <label for="desc">Description</label>
+        <textarea name="desc" id="desc" cols="30" rows="10" style="vertical-align: top;">{{this_book.desc}}</textarea>
+        <button type="submit">Update</button>
+        <a href="../delete/{{this_book.id}}">Delete</a>
+    </form>
+    {% else %}
+    <p name="descr" id="descr">Description: {{this_book.desc}}</p>
+    {% endif %}
+
+    <h2>Users who like this book</h2>
+    {% for user in this_book.liked_by.all %}
+        <p>{{user.first_name}} {{user.last_name}}</p>
+        {% if user.id == request.session.user %}
+            <a href="../unfollow/{{this_book.id}}">Un-favourite</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if this_user.0 not in this_book.liked_by.all %}
+        <a href="../add_favourite/{{this_book.id}}">Add to favourite</a>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('', views.log_reg),
+    path('home/' , views.home),
+    path('home/p_message/' , views.post_message),
+
+    path('login_registration/', views.check),
+    path('logout', views.logout)
+]
